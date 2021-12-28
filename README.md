@@ -9,3 +9,11 @@ This repository was created with the support of the [freeCodeCamp](https://www.y
 It uses a public [API](https://rapidapi.com/hub) to create a game database website.
 It will be used:
 components, http calls, http interceptors, services, routes, pipes, ngFor, ngIf and more.
+
+## Creating a new Project
+
+- ng new app-game-list --style=scss --routing
+
+## Add Angular Material
+
+- ng add @angular/material
