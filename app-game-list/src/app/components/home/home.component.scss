@@ -1,0 +1,116 @@
+.filters {
+	max-width: 1200px;
+	display: flex;
+	justify-content: flex-end;
+	margin: 20px auto 10px auto;
+}
+
+::ng-deep {
+
+	.mat-form-field-wrapper {
+		margin-right: 3rem;
+	}
+
+	.mat-form-field-infix {
+		background: rgba(63, 81, 181, .5);
+		border-radius: 4px;
+	}
+
+	.mat-select-value,
+	.mat-select-arrow,
+	.mat-form-field-hide-placeholder .mat-select-placeholder,
+	.mat-form-field-appearence-legacy .mat-form-field-label {
+		color: #fff !important;
+		opacity: 1;
+	}
+
+	.mat-form-field-infix {
+		border-color: #fff !important;
+		border-top: none;
+		padding-left: 5px !important;
+	}
+
+	.mat-form-field-appearance-legacy .mat-form-field-label {
+		padding-left: 5px;
+	}
+
+	#mat-form-field-label-1 {
+		color: #fff !important;
+		opacity: 1;
+	}
+
+	.mat-form-field-appearance-legacy .mat-form-field-underline {
+		background: #fff !important;
+	}
+}
+
+.games {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1200px;
+	margin: 20px auto;
+}
+
+
+.game {
+	width: 280px;
+	margin: 10px;
+	height: 330px;
+	overflow: hidden;
+	border-radius: 5px;
+	background-color: #f4f4f4;
+	box-shadow: 4px 3px 8px 0px rgb(63 81 181 / 22%);
+	transition-duration: 0.3s;
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 4px 3px 11px 6px rgb(63 81 181 / 46%);
+		transform: translateY(-3px);
+	}
+
+	&-thumb-container {
+		position: relative;
+		height: 172px;
+		color: #000;
+		text-align: center;
+	}
+
+	&-thumbnail {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		height: 172px;
+	}
+
+	&-description {
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 157px;
+	}
+
+	&-name {
+		color: #000;
+		font-weight: 500;
+		font-size: 22px;
+		margin-bottom: 35px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	&-platforms {
+		display: flex;
+	}
+
+	&-platform {
+		width: 20px;
+		margin-right: 10px;
+	}
+
+}
