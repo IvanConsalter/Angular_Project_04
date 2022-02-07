@@ -11,6 +11,8 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class DetailsComponent implements OnInit {
 
+  gameRating = 0;
+  metacriticUrl = '';
   gameId: string;
   game: Game;
   routeSub: Subscription;
@@ -35,7 +37,31 @@ export class DetailsComponent implements OnInit {
         this.game = gameResponse;
         console.log(this.game);
         
+        this.metacriticUrl = this.game.metacritic_url;
+        if(!this.metacriticUrl) {
+          this.metacriticUrl = 'https://www.metacritic.com/';
+        }
+        
+        setTimeout(() => {
+          this.gameRating = this.game.metacritic;
+        }, 1000);
+
       })
+  }
+
+  getColor(value: number): string {
+    if(value < 30) {
+      return '#ef4655';
+    }
+    else if(value < 50) {
+      return '#f7aa38';
+    }
+    else if(value < 75) {
+      return '#fffa50';
+    }
+    else {
+      return '#5ee432';
+    }
   }
 
 }

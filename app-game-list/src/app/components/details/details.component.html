@@ -21,7 +21,8 @@
             [max]="100"
             [dialStartAngle]="180"
             [dialEndAngle]="0"
-            [value]="50"
+            [value]="gameRating"
+            [color]="getColor"
             [animated]="true"
             [animationDuration]="2"
           >
@@ -29,7 +30,7 @@
           <a
             class="game-gauge-label"
             target="_blank"
-            href="https://www.metacritic.com"
+            [href]="metacriticUrl"
             >Metacritic</a
           >
         </div>
