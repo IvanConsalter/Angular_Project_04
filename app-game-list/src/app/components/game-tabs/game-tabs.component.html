@@ -1,1 +1,69 @@
-<p>game-tabs works!</p>
+<div class="game-tabs">
+  <mat-tab-group mat-align-tabs="center" backgroundColor="primary">
+    <mat-tab label="About">
+      <div class="game-tabs-about">
+        <p class="game-tabs-par">
+          Platforms:
+          <span>PC</span>
+        </p>
+        <p class="game-tabs-par">
+          Publishers:
+          <span>Konami</span>
+        </p>
+        <p class="game-tabs-par">
+          Website:
+          <a href="#" target="_blank" class="game-tabs-link">http://</a>
+        </p>
+        <div class="game-description">Some Description</div>
+        <p class="game-tabs-votes">
+          <span class="game-votes-like">
+            <mat-icon class="game-votes-up">thumb_up</mat-icon>
+            <span class="game-votes-count">45</span>
+          </span>
+          <span>
+            <mat-icon class="game-votes-down">thumb_down</mat-icon>
+            <span class="game-votes-count">12</span>
+          </span>
+        </p>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Screenshots">
+      <div class="game-screenshots">
+        <img 
+        class="game-screenshot"
+        src="https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+        alt="game-screenshot"
+      />
+      <img 
+        class="game-screenshot"
+        src="https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+        alt="game-screenshot"
+      />
+      <img 
+        class="game-screenshot"
+        src="https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+        alt="game-screenshot"
+      />
+      <img 
+        class="game-screenshot"
+        src="https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+        alt="game-screenshot"
+      />
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Trailers">
+      <video
+        class="game-trailer"
+        controls
+      >
+        <source 
+          src="https://steamcdn-a.akamaihd.net/steam/apps/256693661/movie_max.mp4"
+          type="video/mp4"
+        >
+        Your browser does not support the video tag.
+      </video>
+    </mat-tab>
+  </mat-tab-group>
+</div>
