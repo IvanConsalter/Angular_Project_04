@@ -9,6 +9,10 @@
     &-about {
       width: 80%;
       margin: 1rem auto;
+
+      @media only screen and (max-width: 430px) {
+        width: 100%;
+      }
     }
 
     &-par {
@@ -56,6 +60,7 @@
 
   &-description {
     padding: 1rem;
+    line-height: 1.5;
   }
 
   &-screenshots {
@@ -64,6 +69,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1rem;
+
+    @media only screen and (max-width: 430px) {
+      width: 100%;
+    }
   }
 
   &-screenshot {
