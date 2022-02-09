@@ -2,64 +2,59 @@
   <mat-tab-group mat-align-tabs="center" backgroundColor="primary">
     <mat-tab label="About">
       <div class="game-tabs-about">
-        <p class="game-tabs-par">
+        <p class="game-tabs-par" *ngIf="game.parent_platforms?.length">
           Platforms:
-          <span>PC</span>
+          <span *ngFor="let game of game.parent_platforms; let last = last">
+            {{ game.platform.name }}
+            <span *ngIf="!last">, </span>
+          </span>
         </p>
-        <p class="game-tabs-par">
+        <p class="game-tabs-par" *ngIf="game.publishers?.length">
           Publishers:
-          <span>Konami</span>
+          <span *ngFor="let publisher of game.publishers; let last = last">
+            {{ publisher.name }}
+            <span *ngIf="!last">, </span>
+          </span>
         </p>
-        <p class="game-tabs-par">
+        <p class="game-tabs-par" *ngIf="game.website?.length">
           Website:
-          <a href="#" target="_blank" class="game-tabs-link">http://</a>
+          <a href="{{ game.website }}" target="_blank" class="game-tabs-link">{{ game.website }}</a>
         </p>
-        <div class="game-description">Some Description</div>
+        <div class="game-description">{{ game.description_raw }}</div>
         <p class="game-tabs-votes">
-          <span class="game-votes-like">
-            <mat-icon class="game-votes-up">thumb_up</mat-icon>
-            <span class="game-votes-count">45</span>
-          </span>
-          <span>
-            <mat-icon class="game-votes-down">thumb_down</mat-icon>
-            <span class="game-votes-count">12</span>
-          </span>
+          <ng-container *ngFor="let rating of game.ratings">
+            <span class="game-votes-like" *ngIf="rating.title === 'exceptional'">
+              <mat-icon class="game-votes-up">thumb_up</mat-icon>
+              <span class="game-votes-count">{{ rating.count || 0 }}</span>
+            </span>
+            <span *ngIf="rating.title === 'skip'">
+              <mat-icon class="game-votes-down">thumb_down</mat-icon>
+              <span class="game-votes-count">{{ rating.count || 0 }}</span>
+            </span>
+          </ng-container>
         </p>
       </div>
     </mat-tab>
 
-    <mat-tab label="Screenshots">
+    <mat-tab label="Screenshots" *ngIf="game.screenshots?.length"><!-- screenshots is a variable in response of map in http service -->
       <div class="game-screenshots">
         <img 
         class="game-screenshot"
-        src="https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+        *ngFor="let screenshot of game.screenshots"
+        src="{{ screenshot.image }}"
         alt="game-screenshot"
-      />
-      <img 
-        class="game-screenshot"
-        src="https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
-        alt="game-screenshot"
-      />
-      <img 
-        class="game-screenshot"
-        src="https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
-        alt="game-screenshot"
-      />
-      <img 
-        class="game-screenshot"
-        src="https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
-        alt="game-screenshot"
-      />
+        />
       </div>
     </mat-tab>
 
-    <mat-tab label="Trailers">
+    <mat-tab label="Trailers" *ngIf="game.trailers?.length"><!-- trailers is a variable in response of map in http service -->
       <video
         class="game-trailer"
+        *ngFor="let trailer of game.trailers"
         controls
       >
         <source 
-          src="https://steamcdn-a.akamaihd.net/steam/apps/256693661/movie_max.mp4"
+          src="{{ trailer.data?.max }}"
           type="video/mp4"
         >
         Your browser does not support the video tag.
