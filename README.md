@@ -4,6 +4,8 @@ This repository was created with the support of the [freeCodeCamp](https://www.y
 
 :eyes: [ProjectVideo](https://www.youtube.com/watch?v=LiOzTQAz13Q&list=PLq8_XuFJtk9kOtEIjY_cGupTom9P6OlkV) :eyes:
 
+Deploy: 👀 https://ivanconsalter-gamelist.netlify.app/ 👀
+
 ## <p align="center">About the Project</p>
 
 It uses a public [API](https://rapidapi.com/hub) to create a game database website.
