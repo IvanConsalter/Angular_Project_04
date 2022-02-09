@@ -17,3 +17,19 @@ components, http calls, http interceptors, services, routes, pipes, ngFor, ngIf 
 ## Add Angular Material
 
 - ng add @angular/material
+
+# Layout
+
+## Home
+![home-page](https://user-images.githubusercontent.com/50461475/153278835-f9175c89-a973-4392-b6e2-ffb254985bb4.png)
+
+## Details | About
+![details-page-about](https://user-images.githubusercontent.com/50461475/153278831-49ea7d16-de25-4a12-b310-c4aa874fb526.png)
+
+## Details | Screenshots
+![details-page-screeshots](https://user-images.githubusercontent.com/50461475/153278827-93f8cdc9-2e75-4f13-bc19-8c8988e3a008.png)
+
+## Details | Trailers
+![details-page-trailers](https://user-images.githubusercontent.com/50461475/153278819-b398b888-c02c-4c34-9f87-0205778b2b8b.png)
+
+
