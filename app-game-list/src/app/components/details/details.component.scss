@@ -45,6 +45,10 @@
       color: #f4f4f4;
       font-weight: 700;
       white-space: nowrap;
+
+      @media only screen and (max-width: 430px) {
+        font-size: 1.8rem;
+      }
     }
 
     &-release-date {
@@ -52,6 +56,10 @@
       color: #f4f4f4;
       font-weight: 700;
       margin: 1rem 0;
+
+      @media only screen and (max-width: 430px) {
+        font-size: 1.2rem;
+      }
     }
 
     &-genres {
