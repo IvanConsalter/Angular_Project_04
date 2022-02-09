@@ -20,7 +20,7 @@
 	}
 
 	.mat-form-field-infix {
-		background: rgba(63, 81, 181, .5);
+		background: #f4f4f4;
 		border-radius: 4px;
 	}
 
@@ -28,12 +28,12 @@
 	.mat-select-arrow,
 	.mat-form-field-hide-placeholder .mat-select-placeholder,
 	.mat-form-field-appearence-legacy .mat-form-field-label {
-		color: #fff !important;
+		color: #000 !important;
 		opacity: 1;
 	}
 
 	.mat-form-field-infix {
-		border-color: #fff !important;
+		border-color: #000 !important;
 		border-top: none;
 		padding-left: 5px !important;
 	}
@@ -43,12 +43,12 @@
 	}
 
 	#mat-form-field-label-1 {
-		color: #fff !important;
+		color: #000 !important;
 		opacity: 1;
 	}
 
 	.mat-form-field-appearance-legacy .mat-form-field-underline {
-		background: #fff !important;
+		background: #000 !important;
 	}
 }
 
