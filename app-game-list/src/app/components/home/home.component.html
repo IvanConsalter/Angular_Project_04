@@ -44,3 +44,9 @@
   
 </div>
 
+<div class="btn-container">
+  <div class="btn-content">
+    <button class="btn-primary" (click)="changeToPreviousPage()" [disabled]="currentPage === 1"><span> << </span> Previous</button>
+    <button class="btn-primary" (click)="changeToNextPage()">Next <span> >> </span></button>
+  </div>
+</div>
