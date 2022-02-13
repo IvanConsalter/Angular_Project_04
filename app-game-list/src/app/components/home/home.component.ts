@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   public sort: string;
   public games: Array<Game> = [];
   public currentPage: any = 1;
+  public showLoading: boolean = true;
   private routeSub: Subscription;
   private gameSub: Subscription;
 
@@ -37,7 +38,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.gameSub = this.httpService
       .getGameList(this.sort, this.currentPage, search)
       .subscribe((gameList: APIResponse<Game>) => {
-        this.games = gameList.results;
+        if(gameList) {
+          this.games = gameList.results;
+          this.showLoading = false;
+        }
         // console.log(gameList);
       });
   }
