@@ -18,6 +18,11 @@
 </div>
 
 <div class="games">
+  <div class="games-spinner-container">
+    <div class="games-spinner-content">
+      <mat-spinner></mat-spinner>
+    </div>
+  </div>
   <ng-container *ngFor="let game of games">
     <div class="game" (click)="openGameDetails(game.id)">
       <div class="game-thumb-container">
