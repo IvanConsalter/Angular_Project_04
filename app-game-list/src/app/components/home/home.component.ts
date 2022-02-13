@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   public sort: string;
   public games: Array<Game> = [];
+  public currentPage: any = 1;
   private routeSub: Subscription;
   private gameSub: Subscription;
 
@@ -25,25 +26,38 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
       if(params['game-search']) {
-        this.searchGames('metacrit', params['game-search']);
+        this.searchGames('metacrit', this.currentPage, params['game-search']);
+      } else {
+        this.searchGames('metacrit', this.currentPage);
       }
-      else {
-        this.searchGames('metacritic');
-      }
-    })
+    });
   }
 
-  searchGames(sort: string, search?: string): void {
+  searchGames(sort: string, currentPage?: string, search?: string): void { 
     this.gameSub = this.httpService
-      .getGameList(this.sort, search)
+      .getGameList(this.sort, this.currentPage, search)
       .subscribe((gameList: APIResponse<Game>) => {
         this.games = gameList.results;
-        console.log(gameList);
+        // console.log(gameList);
       });
   }
 
   openGameDetails(id: string): void {
     this.router.navigate(['details', id]);
+  }
+
+  changeToPreviousPage(): void {
+    if (this.currentPage === 1) {
+      console.log('blocked button');
+    } else {
+      this.currentPage--;
+      this.ngOnInit();
+    }
+  }
+
+  changeToNextPage(): void {
+    this.currentPage++;
+    this.ngOnInit();
   }
 
   ngOnDestroy(): void {
@@ -55,5 +69,4 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.routeSub.unsubscribe();
     }
   }
-
 }
