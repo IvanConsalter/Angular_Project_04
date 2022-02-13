@@ -14,12 +14,12 @@ export class HttpService {
     private http: HttpClient
   ) { }
 
-  getGameList(ordering: string, search?: string): Observable<APIResponse<Game>> {
+  getGameList(ordering: string, page: string, search?: string): Observable<APIResponse<Game>> {
 
-    let params = new HttpParams().set('ordering', ordering);
+    let params = new HttpParams().set('ordering', ordering).set('page', page);
 
     if(search) {
-      params = new HttpParams().set('ordering', ordering).set('search', search);
+      params = new HttpParams().set('ordering', ordering).set('page', page).set('search', search);
     }
 
     return this.http.get<APIResponse<Game>>(`${env.BASE_URL}/games`, {
@@ -48,8 +48,5 @@ export class HttpService {
           }
         })
       )
-    
-    
-    
   }
 }
