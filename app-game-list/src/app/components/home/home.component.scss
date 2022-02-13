@@ -58,6 +58,7 @@
 	justify-content: center;
 	max-width: 1200px;
 	margin: 20px auto;
+	padding-bottom: 6rem;
 }
 
 
@@ -121,4 +122,48 @@
 		margin-right: 10px;
 	}
 
+}
+
+.btn {
+
+  &-container {
+		width: 100%;
+		background: rgba(21, 21, 21, .6);
+		position: fixed;
+		bottom: 0;
+		z-index: 100;
+  }
+
+	&-content {
+		display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+	}
+
+  &-primary {
+    width: 8.5rem;
+    background: #3F51B5;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    padding: .5rem 1.3rem;
+    margin: 0 1rem;
+    outline: none;
+    border: none;
+    box-shadow: 0.0rem 0.1rem 0.2rem #fff;
+    border-radius: .3rem;
+    cursor: pointer;
+    transition: all linear .2s;
+
+    &:active {
+      transform: translateY(.2rem);
+      box-shadow: none;
+    }
+
+		&:disabled {
+			background: rgba(210, 215, 211, 1);
+    	color: #333;
+		}
+  }
 }
