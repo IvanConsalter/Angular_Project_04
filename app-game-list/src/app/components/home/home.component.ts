@@ -51,6 +51,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   changeToPreviousPage(): void {
+
+    this.showLoading = true;
+
     if (this.currentPage === 1) {
       console.log('blocked button');
     } else {
@@ -60,6 +63,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   changeToNextPage(): void {
+    this.showLoading = true;
     this.currentPage++;
     this.ngOnInit();
   }
