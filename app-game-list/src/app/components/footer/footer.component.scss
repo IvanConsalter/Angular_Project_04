@@ -1,0 +1,32 @@
+.footer {
+
+  color: #fff;
+
+  &-container {
+    width: 100%;
+    background: #323a45;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+
+    & p {
+      color: #fff !important;
+    }
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  &-social-medias {
+
+    display: flex;
+
+    &-icon {
+      margin: 0 .5rem;
+    }
+  }
+}
