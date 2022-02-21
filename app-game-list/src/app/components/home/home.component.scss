@@ -62,19 +62,20 @@
 
 	&-spinner-container {
 		width: 100%;
-		height: 82vh;
-		background: #151515;
+		height: 30vh;
+		background: rgba(21, 21, 21, .8);
 		z-index: 10000;
 		position: fixed;
-		top: 3.75rem;
-		left: 0;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 
 	&-spinner-content {
-		transform: translateY(-50%);
+		
 	}
 }
 
