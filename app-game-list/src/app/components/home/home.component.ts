@@ -34,16 +34,21 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-  searchGames(sort: string, currentPage?: string, search?: string): void { 
+  searchGames(sort: string, currentPage?: string, search?: string): void {
+    this.showLoading = true;
     this.gameSub = this.httpService
       .getGameList(this.sort, this.currentPage, search)
-      .subscribe((gameList: APIResponse<Game>) => {
+      .subscribe(
+        (gameList: APIResponse<Game>) => {
         if(gameList) {
           this.games = gameList.results;
           this.showLoading = false;
         }
-        // console.log(gameList);
-      });
+      },
+      (err) => {
+        console.error(err);
+      }
+      );
   }
 
   openGameDetails(id: string): void {
@@ -51,9 +56,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   changeToPreviousPage(): void {
-
-    this.showLoading = true;
-
     if (this.currentPage === 1) {
       console.log('blocked button');
     } else {
@@ -63,7 +65,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   changeToNextPage(): void {
-    this.showLoading = true;
     this.currentPage++;
     this.ngOnInit();
   }

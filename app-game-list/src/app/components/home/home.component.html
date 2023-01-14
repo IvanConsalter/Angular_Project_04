@@ -24,29 +24,29 @@
     </div>
   </div>
   <ng-container *ngFor="let game of games">
-    <div class="game" (click)="openGameDetails(game.id)">
+    <div class="game" style="cursor: default;">
       <div class="game-thumb-container">
         <img
           *ngIf="game.background_image"
           src="{{ game.background_image }}"
           alt="thumbnail"
           class="game-thumbnail">
-        <p *ngIf="!game.background_image">No Image</p>  
+        <p *ngIf="!game.background_image">No Image</p>
       </div>
-  
+
       <div class="game-description">
         <p class="game-name">{{ game.name }}</p>
         <div class="game-platforms">
-          <img 
+          <img
             *ngFor="let gamePlatform of game.parent_platforms"
-            src="assets/images/platforms/{{ gamePlatform.platform.slug }}.svg" 
+            src="assets/images/platforms/{{ gamePlatform.platform.slug }}.svg"
             alt="{{ gamePlatform.platform.slug }}"
             class="game-platform">
         </div>
       </div>
     </div>
   </ng-container>
-  
+
 </div>
 
 <div class="btn-container">
